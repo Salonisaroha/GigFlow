@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "../utils/axios";
+import api from "../services/api";
 
 const MyBids = () => {
   const [bids, setBids] = useState([]);
@@ -8,9 +8,7 @@ const MyBids = () => {
   useEffect(() => {
     const fetchBids = async () => {
       try {
-        const res = await axios.get("/bids/my-bids", {
-          withCredentials: true,
-        });
+        const res = await api.get("/bids/my-bids");
         setBids(res.data);
       } catch (err) {
         console.error("Failed to load bids");
