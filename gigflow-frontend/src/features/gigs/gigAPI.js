@@ -1,13 +1,15 @@
 import api from "../../services/api";
 
+const BASE_URL = import.meta.env.VITE_API_URL
+
 export const fetchGigs = (search = "") =>
-  api.get(`/gigs?search=${search}`);
+  api.get(`${BASE_URL}/gigs?search=${search}`);
 
 export const fetchGigById = (id) =>
-  api.get(`/gigs/${id}`);
+  api.get(`${BASE_URL}/gigs/${id}`);
 
 export const createGig = (data) =>
-  api.post("/gigs", data);
+  api.post("${BASE_URL}/gigs", data);
 
 export const fetchMyGigs = () =>
-  api.get("/gigs/my-gigs");
+  api.get("${BASE_URL}/gigs/my-gigs");

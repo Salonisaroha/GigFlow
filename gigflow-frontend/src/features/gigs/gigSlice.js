@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import * as gigAPI from "./gigAPI";
 
+
 export const getGigs = createAsyncThunk(
   "gigs/getAll",
   async (search) => (await gigAPI.fetchGigs(search)).data
