@@ -1,9 +1,10 @@
 import api from "../../services/api";
 
-console.log('Hitting API: ' + import.meta.env.VITE_API_URL)
 
-export const fetchGigs = (search = "") =>
+export const fetchGigs = (search = "") => {
+  console.log('Hitting API: ' + import.meta.env.VITE_API_URL)
   api.get(`/gigs?search=${search}`);
+}
 
 export const fetchGigById = (id) =>
   api.get(`/gigs/${id}`);
